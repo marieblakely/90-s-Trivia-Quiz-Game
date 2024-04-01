@@ -9,7 +9,9 @@
 
 const categoryContainer = document.querySelector('#category-container')
 
+
 /*----------------------------- Event Listeners -----------------------------*/
+
 
 
 
