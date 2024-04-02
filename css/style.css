@@ -8,11 +8,15 @@ font-family: sans-serif;
 }
 
 h1, h2, h3 {
-color: yellowgreen;  
+color: yellow;  
 }
 
 .category-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  border: 1px solid black;
+  width: 250px;
+  height: 150px;
+  padding: 10px;
 }
