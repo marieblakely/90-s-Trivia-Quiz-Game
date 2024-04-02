@@ -26,22 +26,29 @@ const musicQuestions = [
   {questionText: 'A crazy-sexy-cool trio sung about a guy not getting any love from from them on this hit', correctAnswerText: 'No Scrubs', incorrectAnswerText: ['TLC', 'Destinys Child', 'Bills, Bills, Bills']},
   {questionText: 'The musical hit which featured the lyrics I want it that way was sung by what boy band?', correctAnswerText: 'Backstreet Boys', incorrectAnswerText: ['Blink 182', 'Nsync', 'LFO']},
   {questionText: 'This song by a young girl confessing her loneliness is killing her is named?', correctAnswerText: 'Baby One More Time', incorrectAnswerText: ['My Loneliness is Killing Me', 'Give Me A Sign', 'Brittney Spears']},
-  {questionText: 'The California Love cali tempo rap song produced by Dr. Dre, performed by Tupac features which funk group?', correctAnswerText: 'Zapp' incorrectAnswerText: ['Earth Wind & Fire', 'The Parliament Funkadelic', 'The Gap Band']},
+  {questionText: 'The California Love cali tempo rap song produced by Dr. Dre, performed by Tupac features which funk group?', correctAnswerText: 'Zapp', incorrectAnswerText: ['Earth Wind & Fire', 'The Parliament Funkadelic', 'The Gap Band']},
   {questionText: 'This song performed by a Canadian superstar was featured on the movie The Titanic', correctAnswerText: 'My Heart Will Go On', incorrectAnswerText: ['I Will Always Love You', 'I Have Had The Time Of My Life', 'Do Not Let Go']}
 ]
 
-function getRandomQuestion (){
+function getRandomTvShowQuestion (){
   return tvShowsQuestions[Math.floor(Math.random() * tvShowsQuestions.length)]
 }
 
-function getRandomQuestion (){
+function getRandomMovieQuestion (){
   return moviesQuestions[Math.floor(Math.random() * moviesQuestions.length)]
 }
 
-function getRandomQuestion (){
+function getRandomToyQuestion (){
   return toysQuestions[Math.floor(Math.random() * toysQuestions.length)]
 }
 
-function getRandomQuestion (){
+function getRandomMusicQuestion (){
   return musicQuestions[Math.floor(Math.random() * musicQuestions.length)]
+}
+
+export {
+  getRandomTvShowQuestion,
+  getRandomMovieQuestion,
+  getRandomToyQuestion,
+  getRandomMusicQuestion
 }
