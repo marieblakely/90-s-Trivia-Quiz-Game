@@ -29,3 +29,19 @@ const musicQuestions = [
   {questionText: 'The California Love cali tempo rap song produced by Dr. Dre, performed by Tupac features which funk group?', correctAnswerText: 'Zapp' incorrectAnswerText: ['Earth Wind & Fire', 'The Parliament Funkadelic', 'The Gap Band']},
   {questionText: 'This song performed by a Canadian superstar was featured on the movie The Titanic', correctAnswerText: 'My Heart Will Go On', incorrectAnswerText: ['I Will Always Love You', 'I Have Had The Time Of My Life', 'Do Not Let Go']}
 ]
+
+function getRandomQuestion (){
+  return tvShowsQuestions[Math.floor(Math.random() * tvShowsQuestions.length)]
+}
+
+function getRandomQuestion (){
+  return moviesQuestions[Math.floor(Math.random() * moviesQuestions.length)]
+}
+
+function getRandomQuestion (){
+  return toysQuestions[Math.floor(Math.random() * toysQuestions.length)]
+}
+
+function getRandomQuestion (){
+  return musicQuestions[Math.floor(Math.random() * musicQuestions.length)]
+}
