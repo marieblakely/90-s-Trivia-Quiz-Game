@@ -11,7 +11,7 @@ const moviesQuestions = [
   {questionText: 'A beautiful, popular, and rich high school student befriends a new student and gives her a makeover in this movie', correctAnswerText: 'Clueless', incorrectAnswerText: ['She All That', 'Grease', 'Princess Diaries']},
   {questionText: 'In what movie does a young boy have to fend for himself when his parents mistakenly leave him behind on a famiy trip?', correctAnswerText: 'Home Alone', incorrectAnswerText: ['Dennis the Menace', 'Problem Child', 'Jumanji']},
   {questionText: 'A teenage girl is terrorized by a masked killer with a knife who targets her and her friends by using scary movies in which movie?', correctAnswerText: 'Scary Movie', incorrectAnswerText: ['I Know What You Did Last Summer', 'Urban Legend', 'Texas Chainsaw Massacre']},
-  {questionText: 'In this movie an extraterrestrial attack worldwide results in a group of people launching a counterattack on July 4', correctAnswerText: 'Independence Day', incorrectAnswerText: 'The Fifth Element', 'Men In Black', 'Predator II'}
+  {questionText: 'In this movie an extraterrestrial attack worldwide results in a group of people launching a counterattack on July 4', correctAnswerText: 'Independence Day', incorrectAnswerText: ['The Fifth Element', 'Men In Black', 'Predator II']}
 ]
 
 const toysQuestions = [
