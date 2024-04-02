@@ -7,7 +7,7 @@
 
 /*------------------------ Cached Element References ------------------------*/
 
-const categoryContainer = document.querySelector('#category-container')
+const categoryCardContainer = document.querySelector('#category-card-container')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
