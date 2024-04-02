@@ -10,6 +10,7 @@ import { getRandomMusicQuestion } from "../data/questions.js"
 
 
 
+
 /*------------------------ Cached Element References ------------------------*/
 
 const categoryCardContainer = document.querySelector('#category-card-container')
