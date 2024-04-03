@@ -18,6 +18,7 @@ const categoryCardContainer = document.querySelector('#category-card-container')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
+categoryCardContainer.addEventListener('click', appendQuestion)
 
 
 

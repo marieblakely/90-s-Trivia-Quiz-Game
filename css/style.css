@@ -11,9 +11,10 @@ h1, h2, h3 {
 color: yellow;  
 }
 
-.card {
-  justify-content: space-between;
+.card1, .card2, .card3, .card4 {
+  background-color: #00DB96;
   border: 2px solid black;
+  border-radius: 10px;
   width: 250px;
   height: 150px;
   padding: 10px;
