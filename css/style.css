@@ -6,7 +6,11 @@ font-family: sans-serif;
 }
 
 h1, h2, h3 {
-color: yellow;  
+color: yellow; 
+}
+
+h1 {
+  margin-top: 130px;
 }
 
 .card, .card2, .card3, .card4 {
