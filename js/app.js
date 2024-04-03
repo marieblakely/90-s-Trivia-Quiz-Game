@@ -14,11 +14,11 @@ import { getRandomMusicQuestion } from "../data/questions.js"
 /*------------------------ Cached Element References ------------------------*/
 
 const categoryCardContainer = document.querySelector('#category-card-container')
-
+const card1 = document.querySelector('card-1')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-categoryCardContainer.addEventListener('click', appendQuestion)
+card1.addEventListener('click', appendQuestion)
 
 
 
