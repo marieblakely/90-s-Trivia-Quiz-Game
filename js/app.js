@@ -26,10 +26,17 @@ const categoryCardContainer = document.querySelector('#category-card-container')
 function render(){
   categoryCardContainer.innerHTML = ''
   tvShowsQuestions.forEach(question => {
-
+    appendQuestion(question)
   })
 }
 
 function appendQuestion(tvShowsQuestions){
-
+  let questionCard = document.createElement('div')
+  questionCard.className = `card`
+  questionCard.innerHTML = 
+    `<div>
+      <p>${question.text}</p>
+      <p>${question.questionText}</p>
+    </div>`
+      categoryCardContainer.appendChild(questionCard)
 }
