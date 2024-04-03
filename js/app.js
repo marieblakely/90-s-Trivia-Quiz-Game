@@ -23,3 +23,13 @@ const categoryCardContainer = document.querySelector('#category-card-container')
 
 /*-------------------------------- Functions --------------------------------*/
 
+function render(){
+  categoryCardContainer.innerHTML = ''
+  tvShowsQuestions.forEach(question => {
+
+  })
+}
+
+function appendQuestion(tvShowsQuestions){
+
+}

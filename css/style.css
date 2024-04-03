@@ -11,20 +11,16 @@ h1, h2, h3 {
 color: yellow;  
 }
 
-.category-card {
-  display: flex;
-  flex-direction: column;
+.card {
   justify-content: space-between;
-  border: 1px solid black;
+  border: 2px solid black;
   width: 250px;
   height: 150px;
   padding: 10px;
 }
 
+
 #category-card-container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
 }
