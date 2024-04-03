@@ -9,13 +9,13 @@ h1, h2, h3 {
 color: yellow;  
 }
 
-.card1, .card2, .card3, .card4 {
+.card, .card2, .card3, .card4 {
   display: center;
   flex-direction: row;
   flex-wrap: wrap;
   float: left;
   background-color: #00DB96;
-  border: 2px solid black;
+  border: 3px solid fuchsia;
   border-radius: 10px;
   width: 250px;
   height: 150px;
