@@ -8,6 +8,7 @@ import { getRandomMusicQuestion } from "../data/questions.js"
 
 /*-------------------------------- Variables --------------------------------*/
 
+const tvShowsQuestions = []
 
 
 
@@ -21,7 +22,7 @@ const card4 = document.querySelector('.card4')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-card.addEventListener('click', handleClick)
+card.addEventListener('click', tvQuestion)
 card2.addEventListener('click', handleClick)
 card3.addEventListener('click', handleClick)
 card4.addEventListener('click', handleClick)
@@ -30,8 +31,9 @@ card4.addEventListener('click', handleClick)
 
 //when a category card is clicked, display a question from that category
 
-function handleClick(evt) {
-  
+function tvQuestion() {
+  const newQuestion = getRandomTvShowQuestion()
+  tvShowsQuestions.push(newQuestion)
 }
 
 // function render(){
