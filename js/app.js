@@ -21,14 +21,18 @@ const card4 = document.querySelector('.card4')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-card.addEventListener('click', (EventTarget))
-card2.addEventListener('click', (EventTarget))
-card3.addEventListener('click', (EventTarget))
-card4.addEventListener('click', (EventTarget))
-
-
+card.addEventListener('click', handleClick)
+card2.addEventListener('click', handleClick)
+card3.addEventListener('click', handleClick)
+card4.addEventListener('click', handleClick)
 
 /*-------------------------------- Functions --------------------------------*/
+
+//when a category card is clicked, display a question from that category
+
+function handleClick(evt) {
+  
+}
 
 // function render(){
 //   categoryCardContainer.innerHTML = ''
