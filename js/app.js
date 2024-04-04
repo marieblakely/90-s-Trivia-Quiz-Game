@@ -33,30 +33,16 @@ card4.addEventListener('click', handleClick)
 //when a category card is clicked, display a question from that category
 
 function handleClick(evt) {
-  let categoryCard = evt.target
+  let categoryCard = evt.target;
+  // let card = 'tvShowsQuestions'
+  // let card2 = 'moviesQuestions'
   // make tv show card clickable
-  // if categoryCard.textContent === '90's movies' 
-  //call generateRand
+  if ((categoryCard.textContent) === ('tvShowsQuestions')){
+    getRandomTvShowQuestion()}
+    
   //once tv show card is clicked get a random question from tvShowsQuestion array
-  // if card = getRandomTvShowQuestion(
-  // tvShowsQuestions.push(newQuestion)
+  
   console.log(categoryCard.textContent)
 }
 
-// function render(){
-//   categoryCardContainer.innerHTML = ''
-//   tvShowsQuestions.forEach(question => {
-//     appendQuestion(question)
-//   })
-// }
-
-// function appendQuestion(tvShowsQuestions){
-//   let questionCard = document.createElement('div')
-//   questionCard.className = `card`
-//   questionCard.innerHTML = 
-//     `<div>
-//       <p>${question.text}</p>
-//       <p>${question.questionText}</p>
-//     </div>`
-//       categoryCardContainer.appendChild(questionCard)
-// }
+getRandomTvShowQuestion()
