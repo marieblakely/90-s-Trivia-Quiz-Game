@@ -22,7 +22,6 @@
 [90's Trivia Quiz Game](https://90striviaquizgame.netlify.app/)
 
 
-Colons can be used to align columns.
 
 | `Technology`  | `Attibutes`   | `Icebox Items`  |
 | ------------- |:-------------:| -----:|
