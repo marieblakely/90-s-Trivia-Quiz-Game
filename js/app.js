@@ -22,6 +22,9 @@ const cardEl = document.querySelector('#card')
 const cardEl2= document.querySelector('#card2')
 const cardEl3 = document.querySelector('#card3')
 const cardEl4 = document.querySelector('#card4')
+const resetButtonContainer = document.querySelector('.reset-button')
+const resetBtn = document.getElementById('reset')
+
 
 /*----------------------------- Event Listeners --------------------------------*/
 
@@ -29,14 +32,17 @@ const cardEl4 = document.querySelector('#card4')
 cardEl.addEventListener('click', () => {
   const newTvQuestion = getRandomTvShowQuestion()
   tvShowsQuestions.push(newTvQuestion)
+  // gameIsInPlay = true
   console.log(tvShowsQuestions)
 })
 // card2.addEventListener('click', handleClick)
 // card3.addEventListener('click', handleClick)
 // card4.addEventListener('click', handleClick)
+resetBtn.addEventListener('click', handleReset)
 
 /*-------------------------------- Functions --------------------------------*/
 
+// init()
 
 function createTvQuestion(){
   const newTvQuestion = getRandomTvShowQuestion()
@@ -67,9 +73,15 @@ function init(){
   render()
 }
 
-function render(){
-
+function handleReset (){
+  gameIsInPlay = false
+  render()
 }
+// function render(){
+//   if (gameIsInPlay){
+//     resetButtonContainer.style.display = ''
+//   }
+// }
 
 
 //when a category card is clicked
