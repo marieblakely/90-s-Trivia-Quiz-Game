@@ -26,8 +26,8 @@ const cardEl4 = document.querySelector('#card4')
 
 
 cardEl.addEventListener('click', () => {
-  const newQuestion = getRandomTvShowQuestion()
-  tvShowsQuestions.push(newQuestion)
+  const newTvQuestion = getRandomTvShowQuestion()
+  tvShowsQuestions.push(newTvQuestion)
   console.log(tvShowsQuestions)
 })
 // card2.addEventListener('click', handleClick)
@@ -37,20 +37,45 @@ cardEl.addEventListener('click', () => {
 /*-------------------------------- Functions --------------------------------*/
 
 
-//when a category card is clicked
-function tvShows(evt) {
-  let card = evt.target;
-  // let card = 'tvShowsQuestions'
-  // let card2 = 'moviesQuestions'
-  // make tv show card clickable
-  if ((card.textContent) === ('tvShows')){
-    // append ('questionText')
-    // getRandomTvShowQuestion()
-  }
-    //once tv show card is clicked get a random question from tvShowsQuestion array
-  
-  console.log(card.textContent)
+function createTvQuestion(){
+  const newTvQuestion = getRandomTvShowQuestion()
+  tvShowsQuestions.push(newTvQuestion)
+  render()
 }
+
+function render() {
+  categoryCardContainer.innerHTML = ''
+  tvShowsQuestions.forEach((question, idx) => {
+    appendQuestion(question, idx)
+  })
+}
+
+function appendQuestion(question, idx){
+  let questionCard = document.createElement('div')
+  questionCard.className = `card ${question.questionText}`
+  questionCard.innerHTML =
+    `<div>
+      <p>${question.questionText}</p>
+    </div>
+    `
+  categoryCardContainer.appendChild(questionCard)
+}
+
+
+//when a category card is clicked
+// function tvShows(evt) {
+//   let card = evt.target;
+//   // let card = 'tvShowsQuestions'
+//   // let card2 = 'moviesQuestions'
+//   // make tv show card clickable
+//   if ((card.textContent) === ('tvShows')){
+//     // append ('questionText')
+//     // getRandomTvShowQuestion()
+//   }
+//     //once tv show card is clicked get a random question from tvShowsQuestion array
+  
+//   console.log(card.textContent)
+// }
 
 // create new question function
 
