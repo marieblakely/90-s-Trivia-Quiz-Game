@@ -23,7 +23,7 @@
 
 
 
-| `Technology`  | `Attibutes`   | `Icebox Items`  |
+| `Technology`  | `Attributes`   | `Icebox Items`  |
 | ------------- |:-------------:| -----:|
 | `JavaScript`  | coolors.co    | animations and font added to header |
 | `HTML `       | heropatterns.com| category cards have a 3D look    |

@@ -13,6 +13,7 @@ const moviesQuestions = []
 const toysQuestions = []
 const musicQuestions = []
 let questionIndex = 0
+let gameIsInPlay
 
 /*------------------------ Cached Element References ---------------------------*/
 
@@ -59,6 +60,15 @@ function appendQuestion(question, idx){
     </div>
     `
   categoryCardContainer.appendChild(questionCard)
+}
+
+function init(){
+  gameIsInPlay = false
+  render()
+}
+
+function render(){
+
 }
 
 
