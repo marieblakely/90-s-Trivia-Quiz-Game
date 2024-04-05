@@ -8,7 +8,7 @@ import { getRandomMusicQuestion } from "../data/questions.js"
 
 /*-------------------------------- Variables (state)-----------------------------*/
 
-const tvShowsQuestion = []
+const tvShowsQuestions = []
 const moviesQuestions = []
 const toysQuestions = []
 const musicQuestions = []
@@ -17,7 +17,7 @@ let questionIndex = 0
 /*------------------------ Cached Element References ---------------------------*/
 
 const categoryCardContainer = document.querySelector('#category-card-container')
-const cardEls = document.querySelector('#card')
+const cardEl = document.querySelector('#card')
 const cardEl2= document.querySelector('#card2')
 const cardEl3 = document.querySelector('#card3')
 const cardEl4 = document.querySelector('#card4')
@@ -25,7 +25,11 @@ const cardEl4 = document.querySelector('#card4')
 /*----------------------------- Event Listeners --------------------------------*/
 
 
-cardEls.addEventListener('click', tvShows)
+cardEl.addEventListener('click', () => {
+  const newQuestion = getRandomTvShowQuestion()
+  tvShowsQuestions.push(newQuestion)
+  console.log(tvShowsQuestions)
+})
 // card2.addEventListener('click', handleClick)
 // card3.addEventListener('click', handleClick)
 // card4.addEventListener('click', handleClick)
