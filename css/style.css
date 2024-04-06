@@ -14,7 +14,7 @@ h1 {
 }
 
 .card, .card2, .card3, .card4 {
-  display: center;
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   float: left;
@@ -33,4 +33,6 @@ h1 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
