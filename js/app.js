@@ -10,7 +10,7 @@ import { getRandomMusicQuestion } from "../data/questions.js"
 
 const tvShowsQuestions = []
 const moviesQuestions = []
-const toysQuestions = []
+const toyQuestions = []
 const musicQuestions = []
 let questionIndex = 0
 let gameIsInPlay
@@ -28,18 +28,13 @@ const resetBtn = document.getElementById('reset')
 /*----------------------------- Event Listeners --------------------------------*/
 
 
-cardEl.addEventListener('click', () => {
-  const newTvQuestion = getRandomTvShowQuestion()
-  tvShowsQuestions.push(newTvQuestion)
-  console.log(tvShowsQuestions)
-})
-cardEl2.addEventListener('click', handleClick)
-  const newMovieQuestion = getRandomMovieQuestion()
-  moviesQuestions.push(newMovieQuestion)
+cardEl.addEventListener('click', createTvQuestion) 
 
-      
-// card3.addEventListener('click', handleClick)
-// card4.addEventListener('click', handleClick)
+cardEl2.addEventListener('click', createMovieQuestion)
+  
+cardEl3.addEventListener('click', createToyQuestion)
+
+cardEl4.addEventListener('click', createMusicQuestion)
 resetBtn.addEventListener('click', handleReset)
 
 /*-------------------------------- Functions --------------------------------*/
@@ -48,16 +43,26 @@ resetBtn.addEventListener('click', handleReset)
 
 
 function createTvQuestion(){
-  // let cardEl = getRandomTvShowQuestion(evt.target.id)
   const newTvQuestion = getRandomTvShowQuestion()
   tvShowsQuestions.push(newTvQuestion)
   render()
 }
 
-function handleClick(evt){
-  let cardEl2 = getRandomMovieQuestion(evt.target.id)
+function createMovieQuestion(){
   const newMovieQuestion = getRandomMovieQuestion()
   moviesQuestions.push(newMovieQuestion)
+  render()
+}
+
+function createToyQuestion(){
+  const newToyQuestion = getRandomToyQuestion()
+  toyQuestions.push(newToyQuestion)
+  render()
+}
+
+function createMusicQuestion(){
+  const newMusicQuestion = getRandomMusicQuestion()
+  musicQuestions.push(newMusicQuestion)
   render()
 }
 
@@ -71,10 +76,15 @@ function render() {
   tvShowsQuestions.forEach((question, idx) => {
     appendQuestion(question, idx)
     })
-  // categoryCardContainerEl.innerHTML = ''
-  // moviesQuestions.forEach((question, idx) => {
-  //   appendQuestion(question, idx)
-  //   })  
+  moviesQuestions.forEach((question, idx) => {
+    appendQuestion(question, idx)
+    }) 
+  toyQuestions.forEach((question, idx) => {
+    appendQuestion(question, idx)
+    }) 
+  musicQuestions.forEach((question, idx) => {
+    appendQuestion(question, idx)
+    })        
   }
 
 
