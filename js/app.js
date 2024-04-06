@@ -12,7 +12,7 @@ const tvShowsQuestions = []
 const moviesQuestions = []
 const toyQuestions = []
 const musicQuestions = []
-let questionIndex = 0
+let currentQuestionTextIndex 
 let gameIsInPlay
 
 /*------------------------ Cached Element References ---------------------------*/
@@ -24,18 +24,18 @@ const cardEl3 = document.querySelector('#card3')
 const cardEl4 = document.querySelector('#card4')
 const resetButtonContainer = document.querySelector('.reset-button')
 const resetBtn = document.getElementById('reset')
+const nextQuestionBtn = document.getElementById('next-question')
 
 /*----------------------------- Event Listeners --------------------------------*/
 
 
 cardEl.addEventListener('click', createTvQuestion) 
-
 cardEl2.addEventListener('click', createMovieQuestion)
-  
 cardEl3.addEventListener('click', createToyQuestion)
-
 cardEl4.addEventListener('click', createMusicQuestion)
 resetBtn.addEventListener('click', handleReset)
+nextQuestionBtn.addEventListener('click', nextQuestion)
+  
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -66,6 +66,14 @@ function createMusicQuestion(){
   render()
 }
 
+function nextQuestion (){
+  currentQuestionTextIndex += 1
+  if (currentQuestionTextIndex === tvShowsQuestions.length) {
+    console.log('Choose A New Category')
+  } else {
+
+  }
+}
 
 function render() {
   if (gameIsInPlay) {
@@ -73,8 +81,8 @@ function render() {
     categoryCardContainerEl.style.display = ''
   }  
   categoryCardContainerEl.innerHTML = ''
-  tvShowsQuestions.forEach((question, answer, idx) => {
-    appendQuestion(question, answer, idx)
+  tvShowsQuestions.forEach((question, idx) => {
+    appendQuestion(question)
     })
   moviesQuestions.forEach((question, idx) => {
     appendQuestion(question, idx)
@@ -88,23 +96,23 @@ function render() {
   }
 
 
-function appendQuestion(question, answer, idx){
+function appendQuestion(question, idx){
   let questionCard = document.createElement('div')
-  let answerCard = document.createElement('div')
+  // let answerCard = document.createElement('div')
   questionCard.className = `card ${question.questionText}`
-  answerCard.className = `card ${answer.correctAnswerText}`
+  // answerCard.className = `card ${answer.correctAnswerText}`
   questionCard.innerHTML =
     `<div>
       <p>${question.questionText}</p>
     </div>
     `
   categoryCardContainerEl.appendChild(questionCard)
-  answerCard.innerHTML =
-    `<div>
-    <p>${answer.correctAnswerText}</p>
-    </div>
-    `
-  categoryCardContainerEl.appendChild(answerCard)  
+  // answerCard.innerHTML =
+  //   `<div>
+  //   <p>${answer.correctAnswerText}</p>
+  //   </div>
+  //   `
+  // categoryCardContainerEl.appendChild(answerCard)  
 }
 
 function init(){
