@@ -28,8 +28,8 @@
 
 | `Technology`  | `Attributes`   | `Icebox Items`  |
 | ------------- |:-------------:| -----:|
-| `JavaScript`  | coolors.co    | animations and font added to header |
-| `HTML `       | heropatterns.com| category cards have a 3D look    |
+| `JavaScript`  | [Coolors](https://coolors.co/)   | animations and font added to header |
+| `HTML `       | [Hero Patterns](https://heropatterns.com/)| category cards have a 3D look    |
 | `CSS`         |               |     |
 
 
