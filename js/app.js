@@ -73,8 +73,8 @@ function render() {
     categoryCardContainerEl.style.display = ''
   }  
   categoryCardContainerEl.innerHTML = ''
-  tvShowsQuestions.forEach((question, idx) => {
-    appendQuestion(question, idx)
+  tvShowsQuestions.forEach((question, answer, idx) => {
+    appendQuestion(question, answer, idx)
     })
   moviesQuestions.forEach((question, idx) => {
     appendQuestion(question, idx)
@@ -88,15 +88,23 @@ function render() {
   }
 
 
-function appendQuestion(question, idx){
+function appendQuestion(question, answer, idx){
   let questionCard = document.createElement('div')
+  let answerCard = document.createElement('div')
   questionCard.className = `card ${question.questionText}`
+  answerCard.className = `card ${answer.correctAnswerText}`
   questionCard.innerHTML =
     `<div>
       <p>${question.questionText}</p>
     </div>
     `
   categoryCardContainerEl.appendChild(questionCard)
+  answerCard.innerHTML =
+    `<div>
+    <p>${answer.correctAnswerText}</p>
+    </div>
+    `
+  categoryCardContainerEl.appendChild(answerCard)  
 }
 
 function init(){
