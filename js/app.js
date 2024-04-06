@@ -12,7 +12,7 @@ const tvShowsQuestions = []
 const moviesQuestions = []
 const toyQuestions = []
 const musicQuestions = []
-let currentQuestionTextIndex 
+let currentQuestionTextIndex = 0
 let gameIsInPlay
 
 /*------------------------ Cached Element References ---------------------------*/
@@ -34,7 +34,7 @@ cardEl2.addEventListener('click', createMovieQuestion)
 cardEl3.addEventListener('click', createToyQuestion)
 cardEl4.addEventListener('click', createMusicQuestion)
 resetBtn.addEventListener('click', handleReset)
-// nextQuestionBtn.addEventListener('click', nextQuestion)
+nextQuestionBtn.addEventListener('click', nextQuestion)
   
 
 /*-------------------------------- Functions --------------------------------*/
@@ -66,14 +66,13 @@ function createMusicQuestion(){
   render()
 }
 
-// function nextQuestion (){
-//   currentQuestionTextIndex += 1
-//   if (currentQuestionTextIndex === tvShowsQuestions.length) {
-//     console.log('Choose A New Category')
-//   } else {
-
-//   }
-// }
+function nextQuestion (){
+  for (let i =0; i < tvShowsQuestions.length; i++) {
+  currentQuestionTextIndex += 1
+  if (currentQuestionTextIndex === tvShowsQuestions.length) {
+    }
+  }
+}
 
 function render() {
   if (gameIsInPlay) {

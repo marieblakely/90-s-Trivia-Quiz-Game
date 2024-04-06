@@ -21,6 +21,7 @@ h1 {
   background-color: #00DB96;
   border: 3px solid fuchsia;
   border-radius: 10px;
+  box-shadow: 6px 9px 0px rgba(255, 0, 255), 0px 9px 25px rgba(0, 0, 0, .7);
   width: 250px;
   height: 150px;
   padding: 10px;
