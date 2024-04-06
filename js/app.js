@@ -17,14 +17,13 @@ let gameIsInPlay
 
 /*------------------------ Cached Element References ---------------------------*/
 
-const categoryCardContainer = document.querySelector('#category-card-container')
+const categoryCardContainerEl = document.querySelector('#category-card-container')
 const cardEl = document.querySelector('#card')
 const cardEl2= document.querySelector('#card2')
 const cardEl3 = document.querySelector('#card3')
 const cardEl4 = document.querySelector('#card4')
 const resetButtonContainer = document.querySelector('.reset-button')
 const resetBtn = document.getElementById('reset')
-
 
 /*----------------------------- Event Listeners --------------------------------*/
 
@@ -35,7 +34,7 @@ cardEl.addEventListener('click', () => {
   // gameIsInPlay = true
   console.log(tvShowsQuestions)
 })
-// card2.addEventListener('click', handleClick)
+cardEl2.addEventListener('click', handleClick)
 // card3.addEventListener('click', handleClick)
 // card4.addEventListener('click', handleClick)
 resetBtn.addEventListener('click', handleReset)
@@ -44,6 +43,26 @@ resetBtn.addEventListener('click', handleReset)
 
 // init()
 
+function handleClick(evt){
+  let cardEl2 = getRandomMovieQuestion(evt.target.id)
+  console.log(cardEl2)
+}
+
+
+
+// function generateQuestion(){
+//   let questionsCopy = [...allQuestions]
+//   let questionsToAdd = []
+
+//   for (let i = 1; i <= questionsToAdd; i++ ){
+//     let randIdx = Math.floor(Math.random() * questionsCopy.length)
+//     let questionToAdd = questionsCopy.splice(randIdx, 1)
+//     questionsToAdd.push(questionToAdd, questionToAdd)
+//   }
+//   return questionsToAdd
+// }
+
+
 function createTvQuestion(){
   const newTvQuestion = getRandomTvShowQuestion()
   tvShowsQuestions.push(newTvQuestion)
@@ -51,11 +70,16 @@ function createTvQuestion(){
 }
 
 function render() {
-  categoryCardContainer.innerHTML = ''
+  if (gameIsInPlay) {
+    resetButtonContainer.style.display = ''
+    categoryCardContainerEl.style.display = 'none'
+  }  
+  categoryCardContainerEl.innerHTML = ''
   tvShowsQuestions.forEach((question, idx) => {
     appendQuestion(question, idx)
-  })
-}
+    })
+  }
+
 
 function appendQuestion(question, idx){
   let questionCard = document.createElement('div')
@@ -65,7 +89,7 @@ function appendQuestion(question, idx){
       <p>${question.questionText}</p>
     </div>
     `
-  categoryCardContainer.appendChild(questionCard)
+  categoryCardContainerEl.appendChild(questionCard)
 }
 
 function init(){
