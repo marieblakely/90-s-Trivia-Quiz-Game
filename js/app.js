@@ -31,10 +31,13 @@ const resetBtn = document.getElementById('reset')
 cardEl.addEventListener('click', () => {
   const newTvQuestion = getRandomTvShowQuestion()
   tvShowsQuestions.push(newTvQuestion)
-  // gameIsInPlay = true
   console.log(tvShowsQuestions)
 })
 cardEl2.addEventListener('click', handleClick)
+  const newMovieQuestion = getRandomMovieQuestion()
+  moviesQuestions.push(newMovieQuestion)
+
+      
 // card3.addEventListener('click', handleClick)
 // card4.addEventListener('click', handleClick)
 resetBtn.addEventListener('click', handleReset)
@@ -43,41 +46,35 @@ resetBtn.addEventListener('click', handleReset)
 
 // init()
 
-function handleClick(evt){
-  let cardEl2 = getRandomMovieQuestion(evt.target.id)
-  console.log(cardEl2)
-}
-
-
-
-// function generateQuestion(){
-//   let questionsCopy = [...allQuestions]
-//   let questionsToAdd = []
-
-//   for (let i = 1; i <= questionsToAdd; i++ ){
-//     let randIdx = Math.floor(Math.random() * questionsCopy.length)
-//     let questionToAdd = questionsCopy.splice(randIdx, 1)
-//     questionsToAdd.push(questionToAdd, questionToAdd)
-//   }
-//   return questionsToAdd
-// }
-
 
 function createTvQuestion(){
+  // let cardEl = getRandomTvShowQuestion(evt.target.id)
   const newTvQuestion = getRandomTvShowQuestion()
   tvShowsQuestions.push(newTvQuestion)
   render()
 }
 
+function handleClick(evt){
+  let cardEl2 = getRandomMovieQuestion(evt.target.id)
+  const newMovieQuestion = getRandomMovieQuestion()
+  moviesQuestions.push(newMovieQuestion)
+  render()
+}
+
+
 function render() {
   if (gameIsInPlay) {
-    resetButtonContainer.style.display = ''
-    categoryCardContainerEl.style.display = 'none'
+    resetButtonContainer.style.display = 'none'
+    categoryCardContainerEl.style.display = ''
   }  
   categoryCardContainerEl.innerHTML = ''
   tvShowsQuestions.forEach((question, idx) => {
     appendQuestion(question, idx)
     })
+  // categoryCardContainerEl.innerHTML = ''
+  // moviesQuestions.forEach((question, idx) => {
+  //   appendQuestion(question, idx)
+  //   })  
   }
 
 

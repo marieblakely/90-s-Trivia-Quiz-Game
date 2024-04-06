@@ -21,6 +21,9 @@
 
 [90's Trivia Quiz Game](https://90striviaquizgame.netlify.app/)
 
+### `Planning Materials:`
+
+[Planning Materials](https://docs.google.com/document/d/1ehHp7F168ZOgbCp4YLXeWj69-Je3f7CJAkIs_uhyI3I/edit?usp=sharing)
 
 
 | `Technology`  | `Attributes`   | `Icebox Items`  |
