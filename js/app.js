@@ -34,7 +34,7 @@ cardEl2.addEventListener('click', createMovieQuestion)
 cardEl3.addEventListener('click', createToyQuestion)
 cardEl4.addEventListener('click', createMusicQuestion)
 resetBtn.addEventListener('click', handleReset)
-nextQuestionBtn.addEventListener('click', nextQuestion)
+// nextQuestionBtn.addEventListener('click', nextQuestion)
   
 
 /*-------------------------------- Functions --------------------------------*/
@@ -66,14 +66,14 @@ function createMusicQuestion(){
   render()
 }
 
-function nextQuestion (){
-  currentQuestionTextIndex += 1
-  if (currentQuestionTextIndex === tvShowsQuestions.length) {
-    console.log('Choose A New Category')
-  } else {
+// function nextQuestion (){
+//   currentQuestionTextIndex += 1
+//   if (currentQuestionTextIndex === tvShowsQuestions.length) {
+//     console.log('Choose A New Category')
+//   } else {
 
-  }
-}
+//   }
+// }
 
 function render() {
   if (gameIsInPlay) {
@@ -81,8 +81,8 @@ function render() {
     categoryCardContainerEl.style.display = ''
   }  
   categoryCardContainerEl.innerHTML = ''
-  tvShowsQuestions.forEach((question, idx) => {
-    appendQuestion(question)
+  tvShowsQuestions.forEach((question, answer, idx) => {
+    appendQuestion(question, answer)
     })
   moviesQuestions.forEach((question, idx) => {
     appendQuestion(question, idx)
@@ -96,23 +96,23 @@ function render() {
   }
 
 
-function appendQuestion(question, idx){
+function appendQuestion(question, answer, idx){
   let questionCard = document.createElement('div')
-  // let answerCard = document.createElement('div')
+  let answerCard = document.createElement('div')
   questionCard.className = `card ${question.questionText}`
-  // answerCard.className = `card ${answer.correctAnswerText}`
+  answerCard.className = `card ${answer.correctAnswerText}`
   questionCard.innerHTML =
     `<div>
       <p>${question.questionText}</p>
     </div>
     `
   categoryCardContainerEl.appendChild(questionCard)
-  // answerCard.innerHTML =
-  //   `<div>
-  //   <p>${answer.correctAnswerText}</p>
-  //   </div>
-  //   `
-  // categoryCardContainerEl.appendChild(answerCard)  
+  answerCard.innerHTML =
+    `<div>
+    <p>${answer.correctAnswerText}</p>
+    </div>
+    `
+  categoryCardContainerEl.appendChild(answerCard)  
 }
 
 function init(){
@@ -124,29 +124,5 @@ function handleReset (){
   gameIsInPlay = false
   render()
 }
-// function render(){
-//   if (gameIsInPlay){
-//     resetButtonContainer.style.display = ''
-//   }
-// }
 
-
-//when a category card is clicked
-// function tvShows(evt) {
-//   let card = evt.target;
-//   // let card = 'tvShowsQuestions'
-//   // let card2 = 'moviesQuestions'
-//   // make tv show card clickable
-//   if ((card.textContent) === ('tvShows')){
-//     // append ('questionText')
-//     // getRandomTvShowQuestion()
-//   }
-//     //once tv show card is clicked get a random question from tvShowsQuestion array
-  
-//   console.log(card.textContent)
-// }
-
-// create new question function
-
-//append function
 
