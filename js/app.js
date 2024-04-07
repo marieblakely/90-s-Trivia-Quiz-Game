@@ -67,11 +67,12 @@ function createMusicQuestion(){
 }
 
 function nextQuestion (){
-  for (let i =0; i < tvShowsQuestions.length; i++) {
+  // for (let i =0; i < tvShowsQuestions.length; i++) {
   currentQuestionTextIndex += 1
   if (currentQuestionTextIndex === tvShowsQuestions.length) {
-    }
-  }
+    currentQuestionTextIndex += 0
+  } 
+  appendQuestion(currentQuestionTextIndex)
 }
 
 function render() {
@@ -80,8 +81,8 @@ function render() {
     categoryCardContainerEl.style.display = ''
   }  
   categoryCardContainerEl.innerHTML = ''
-  tvShowsQuestions.forEach((question, answer, idx) => {
-    appendQuestion(question, answer, idx)
+  tvShowsQuestions.forEach((question, idx) => {
+    appendQuestion(question, idx)
     })
   moviesQuestions.forEach((question, idx) => {
     appendQuestion(question, idx)
@@ -95,23 +96,24 @@ function render() {
   }
 
 
-function appendQuestion(question, answer, idx){
+function appendQuestion(tvShowsQuestions, idx){
   let questionCard = document.createElement('div')
-  let answerCard = document.createElement('div')
-  questionCard.className = `card ${question.questionText}`
-  answerCard.className = `card ${answer.correctAnswerText}`
-  questionCard.innerHTML =
+  // let answerCard = document.createElement('div')
+  questionCard.className = `card ${tvShowsQuestions.questionText}`
+  // answerCard.className = `card ${answer.correctAnswerText}`
+  questionCard.innerHTML = 
     `<div>
-      <p>${question.questionText}</p>
+      <p>${tvShowsQuestions.questionText}</p>
     </div>
     `
+    
   categoryCardContainerEl.appendChild(questionCard)
-  answerCard.innerHTML =
-    `<div>
-    <p>${answer.correctAnswerText}</p>
-    </div>
-    `
-  categoryCardContainerEl.appendChild(answerCard)  
+  // answerCard.innerHTML = 
+  //   `<div>
+  //   <p>${answer.correctAnswerText1}</p>
+  //   </div>
+  //   `
+  // categoryCardContainerEl.appendChild(answerCard)  
 }
 
 function init(){

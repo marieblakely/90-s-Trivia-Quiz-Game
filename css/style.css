@@ -28,8 +28,8 @@ h1 {
   border: 3px solid fuchsia;
   border-radius: 10px;
   box-shadow: 6px 9px 0px rgba(255, 0, 255), 0px 9px 30px rgba(0, 0, 0, .7);
-  width: 250px;
-  height: 150px;
+  width: 300px;
+  height: 200px;
   padding: 10px;
   margin-top: 40px;
   margin-right: 40px;
@@ -37,6 +37,7 @@ h1 {
   font-family: "Orbitron", sans-serif;
   font-optical-sizing: auto;
   font-style: italic;
+  font-size: larger;
   color: black;
 }
 
