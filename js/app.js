@@ -81,7 +81,7 @@ function render() {
   }  
   categoryCardContainerEl.innerHTML = ''
   tvShowsQuestions.forEach((question, answer, idx) => {
-    appendQuestion(question, answer)
+    appendQuestion(question, answer, idx)
     })
   moviesQuestions.forEach((question, idx) => {
     appendQuestion(question, idx)

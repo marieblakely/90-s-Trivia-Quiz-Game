@@ -1,5 +1,5 @@
 const tvShowsQuestions = [
-  {questionText: 'Which tv show featured six friends, one of which is a nerd, navigating the ups and downs of high school while frequently frustrating their principal?', correctAnswerText: 'Saved By The Bell', incorrectAnswerText: ['Family Matters', 'Boy Meets World', 'All That']},
+  {questionText: 'Which tv show featured six friends, one of which is a nerd, navigating the ups and downs of high school while frequently frustrating their principal?', correctAnswerText: 'Saved By The Bell', incorrectAnswerText1: 'Family Matters', incorrectAnswerText2:'Boy Meets World', incorrectAnswerText3:'All That'},
   {questionText: 'Which tv show featured a teenage male who got sent to live with his Aunt and Uncle for getting in one little fight?', correctAnswerText: 'The Fresh Prince of Bel-air', incorrectAnswerText: ['Will Smith', 'Jazzy Fresh of Bel-air', 'Kenan & Kel']},
   {questionText: 'In this tv show, twins separated at birth learn about each other as teenagers after running into each in the mall', correctAnswerText: 'Sister, Sister', incorrectAnswerText: ['Twins', 'The Suite Life of Zack & Cody', 'The Silent Twins']},
   {questionText: 'What spin-off of The Cosby Show centered the lives of students at Hillman College?', correctAnswerText: 'A Different World', incorrectAnswerText: ['Boy Meets World', 'Felicity', 'Grown-ish']},
