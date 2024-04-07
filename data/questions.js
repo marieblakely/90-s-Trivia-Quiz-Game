@@ -7,7 +7,7 @@ const tvShowsQuestions = [
 ]
 
 const moviesQuestions = [
-  {questionText: 'A businessman and an escort fall hard for one another in what movie?', correctAnswer: 'Pretty Woman', answers:['Great Expectations', 'Cruel Intentions', 'Indescent Exposure']},
+  {questionText: 'A businessman and an escort fall hard for one another in what movie?', correctAnswer: 'Pretty Woman', answers:['Great Expectations', 'Cruel Intentions', 'Indescent Exposure', 'Pretty Woman']},
   {questionText: 'A beautiful, popular, and rich high school student befriends a new student and gives her a makeover in this movie', correctAnswer: 'Clueless', answers:['She All That', 'Grease', 'Princess Diaries', 'Clueless']},
   {questionText: 'In what movie does a young boy have to fend for himself when his parents mistakenly leave him behind on a famiy trip?', correctAnswer: 'Home Alone', answers:['Dennis the Menace','Home Alone', 'Problem Child', 'Jumanji']},
   {questionText: 'A teenage girl is terrorized by a masked killer with a knife who targets her and her friends by using scary movies in which movie?', correctAnswer: 'Scary Movie', answers: ['I Know What You Did Last Summer', 'Urban Legend', 'Scary Movie', 'Texas Chainsaw Massacre']},
