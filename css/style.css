@@ -6,11 +6,11 @@ font-family: sans-serif;
 }
 
 h1, h2, h3 {
-color: yellow; 
+color: #fdfb76; 
 font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
+font-optical-sizing: auto;
+font-weight: bold;
+font-style: italic;
 }
 
 h1 {
@@ -36,8 +36,8 @@ h1 {
   margin-left: 70px;
   font-family: "Orbitron", sans-serif;
   font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
+  font-style: italic;
+  color: black;
 }
 
 #category-card-container {
