@@ -170,4 +170,3 @@ function handleReset (){
   gameIsInPlay = false
   render()
 }
-
