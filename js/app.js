@@ -27,7 +27,8 @@ const cardEl3 = document.querySelector('#card3')
 const cardEl4 = document.querySelector('#card4')
 const resetButtonContainer = document.querySelector('.reset-button-container')
 const resetBtn = document.getElementById('reset')
-const nextQuestionBtn = document.getElementById('next-question')
+// const messageEl = document.querySelector('#message')
+
 
 /*----------------------------- Event Listeners --------------------------------*/
 
@@ -37,7 +38,7 @@ cardEl2.addEventListener('click', createMovieQuestion)
 cardEl3.addEventListener('click', createToyQuestion)
 cardEl4.addEventListener('click', createMusicQuestion)
 resetBtn.addEventListener('click', handleReset)
-// nextQuestionBtn.addEventListener('click', nextQuestion)
+
   
 
 /*-------------------------------- Functions --------------------------------*/
@@ -46,63 +47,50 @@ init()
 
 
 function createTvQuestion(){
-  // const newTvQuestion = getRandomTvShowQuestion()
-  // tvShowsQuestions.push(newTvQuestion)
+  currentQuestionTextIndex = 0
   currentQuestionList = [...tvShowsQuestions]
   gameIsInPlay = true
   render()
 }
 
 function createMovieQuestion(){
-  // const newMovieQuestion = getRandomMovieQuestion()
-  // moviesQuestions.push(newMovieQuestion)
+  currentQuestionTextIndex = 0
   currentQuestionList = [...moviesQuestions]
   gameIsInPlay = true
   render()
 }
 
 function createToyQuestion(){
-  // const newToyQuestion = getRandomToyQuestion()
-  // toyQuestions.push(newToyQuestion)
+  currentQuestionTextIndex = 0
   currentQuestionList = [...toysQuestions]
   gameIsInPlay = true
   render()
 }
 
 function createMusicQuestion(){
-  // const newMusicQuestion = getRandomMusicQuestion()
-  // musicQuestions.push(newMusicQuestion)
+  currentQuestionTextIndex = 0
   currentQuestionList = [...musicQuestions]
   gameIsInPlay = true
   render()
 }
 
-function selectAnswer (evt){
-  console.log(evt.target.textContent)
-  if (evt.target.textContent === currentQuestionList[currentQuestionTextIndex].correctAnswer) {
-    console.log('correct answer')
-    score += 1
-    // increase score by 1
-
-  } else {
-    console.log('incorrect answer')
-  }
-  currentQuestionTextIndex += 1
+function selectAnswer(evt) {
   if (currentQuestionTextIndex < currentQuestionList.length) {
-
-    render()
-  } else {
-    console.log(`You got ${score} out of ${currentQuestionList.length} correct!`)
-
+    if (evt.target.textContent === currentQuestionList[currentQuestionTextIndex].correctAnswer) {
+      console.log('correct answer')
+      score += 1
+    } else {
+      console.log('incorrect answer')
+    }
+    currentQuestionTextIndex += 1
+    if (currentQuestionTextIndex < currentQuestionList.length) {
+      render()
+    } else {
+      console.log(`You got ${score} out of ${currentQuestionList.length} correct!`)
+    }
   }
-  // for (let i =0; i < tvShowsQuestions.length; i++) {
-  // currentQuestionTextIndex += 1
-  // if (currentQuestionTextIndex === tvShowsQuestions.length) {
-  //   currentQuestionTextIndex += 0
-  // } 
-  // appendQuestion(currentQuestionTextIndex)
-
 }
+
 
 function render() {
   console.log(currentQuestionList)
@@ -115,7 +103,6 @@ function render() {
     resetButtonContainer.style.display = 'none'
     questionCardContainerEl.style.display = 'none'
     categoryCardContainerEl.style.display = ''
-
   }
   // categoryCardContainerEl.innerHTML = ''
   // tvShowsQuestions.forEach((question, idx) => {
