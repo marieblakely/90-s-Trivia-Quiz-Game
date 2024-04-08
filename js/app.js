@@ -12,11 +12,13 @@ let currentQuestionList = []
 let currentQuestionTextIndex = 0
 let gameIsInPlay
 let score
+let winner
 
 /*------------------------ Cached Element References ---------------------------*/
 
 const categoryCardContainerEl = document.querySelector('#category-card-container')
 const questionCardContainerEl = document.querySelector('#question-card-container')
+const chooseCategoryContainerEl = document.querySelector('#choose-category-container')
 const resetButtonContainer = document.querySelector('.reset-button-container')
 const messageContainer = document.querySelector('#message-container')
 const cardEl = document.querySelector('#card')
@@ -71,11 +73,11 @@ function createMusicQuestion(){
 function selectAnswer(evt) {
   if (currentQuestionTextIndex < currentQuestionList.length) {
     if (evt.target.textContent === currentQuestionList[currentQuestionTextIndex].correctAnswer) {
-      messageEl.textContent = `Correct! You're a 90's wiz!`
-      score += 1
+      messageEl.textContent = `Correct!`
+      score += 1 
     } else {
       messageEl.textContent = `Incorrect!`
-    }
+    } 
     currentQuestionTextIndex += 1
     if (currentQuestionTextIndex < currentQuestionList.length) {
       render()
@@ -85,18 +87,28 @@ function selectAnswer(evt) {
   }
 }
 
+function checkForWinner(){
+  currentQuestionTextIndex += 1
+    if (currentQuestionTextIndex === currentQuestionList.length) {
+      score === 20
+      winner = true
+      messageEl.textContent = `Congrats! You Win! You're A 90's Wiz!`
+    }
+}
 
 function render() {
-  console.log(currentQuestionList)
+  // console.log(currentQuestionList)
   if (gameIsInPlay) {
     resetButtonContainer.style.display = ''
     categoryCardContainerEl.style.display = 'none'
     questionCardContainerEl.style.display = ''
+    chooseCategoryContainerEl.style.display = 'none'
     appendQuestion()
-  } else {
+      } else {
     resetButtonContainer.style.display = 'none'
     questionCardContainerEl.style.display = 'none'
     categoryCardContainerEl.style.display = ''
+    chooseCategoryContainerEl.style.display = ''
     }
 }
 

@@ -7,6 +7,7 @@ font-family: sans-serif;
 
 h1, h2, h3 {
 color: #fdfb76; 
+text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
 font-family: "Orbitron", sans-serif;
 font-optical-sizing: auto;
 font-weight: bold;
@@ -15,7 +16,12 @@ font-style: italic;
 
 h1 {
   margin-top: 130px;
+  font-size: xxx-large;
 }
+
+h2 {
+  font-size: xxx-large;
+  }
 
 .card, .card2, .card3, .card4 {
   display: flex;
@@ -49,17 +55,24 @@ h1 {
   justify-content: center;
 }
 
+#choose-category-container {
+  animation: flash;
+  animation-duration: 8s;
+  font-size: x-large;
+}
+
 #reset {
   display: flex;
-  border-radius: 8px;
+  margin-top: auto;
   font-family: "Orbitron", sans-serif;
   font-size: large;
-  padding: 6px;
+  padding: 8px;
   font-style: italic;
 }
 
 button {
   display: flex;
+  align-content: flex-end;
   border-radius: 8px;
   font-family: "Orbitron", sans-serif;
   box-shadow: 2px 4px 0px rgba(255, 0, 255), 0px 9px 30px rgba(0, 0, 0, .7);
