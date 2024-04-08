@@ -26,12 +26,12 @@
 [Planning Materials](https://docs.google.com/document/d/1ehHp7F168ZOgbCp4YLXeWj69-Je3f7CJAkIs_uhyI3I/edit?usp=sharing)
 
 
-| `Technology`  | `Attributes`   | `Icebox Items`  |
+| `Technology:`  | `Attributes:`   | `Icebox Items:`  |
 | ------------- |:-------------:| -----:|
 | `JavaScript`  | [Coolors](https://coolors.co/)   | animations and font added to header |
 | `HTML `       | [Hero Patterns](https://heropatterns.com/)| category cards have a 3D look    |
 | `CSS`         | [Superfffmk.life](https://superfffmk.life/product_details/75046559.html)|    |
 |               | [Orbitron Google Font](https://superfffmk.life/product_details/75046559.html)|    |
-
+|               | [Pixabay](https://pixabay.com/sound-effects/search/retro%20games/)   | |
 
 
