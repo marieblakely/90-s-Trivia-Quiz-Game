@@ -21,7 +21,6 @@ const categoryCardContainerEl = document.querySelector('#category-card-container
 const questionCardContainerEl = document.querySelector('#question-card-container')
 const chooseCategoryContainerEl = document.querySelector('#choose-category-container')
 const resetButtonContainer = document.querySelector('.reset-button-container')
-const messageContainer = document.querySelector('#message-container')
 const cardEl = document.querySelector('#card')
 const cardEl2= document.querySelector('#card2')
 const cardEl3 = document.querySelector('#card3')
@@ -74,56 +73,40 @@ function createMusicQuestion(){
 function selectAnswer(evt) {
   
   if (currentQuestionTextIndex < currentQuestionList.length) {
-    if (evt.target.textContent === currentQuestionList[currentQuestionTextIndex].correctAnswer) {
-      correctAnswerSays.volume = .05
-      correctAnswerSays.play()
-      messageEl.textContent = `Correct!`
-      score += 1 
-      } else {
-      (evt.target.textContent === currentQuestionList[currentQuestionTextIndex].answers)
-      answerSays.volume = .05
-      answerSays.play()
-      messageEl.textContent = `Incorrect!`
+  if (evt.target.textContent === currentQuestionList[currentQuestionTextIndex].correctAnswer) {
+    correctAnswerSays.volume = .05
+    correctAnswerSays.play()
+    messageEl.textContent = `Correct!`
+    score += 1 
+  } else {
+    (evt.target.textContent === currentQuestionList[currentQuestionTextIndex].answers)
+    answerSays.volume = .05
+    answerSays.play()
+    messageEl.textContent = `Incorrect!`
     } 
-    currentQuestionTextIndex += 1
-    if (currentQuestionTextIndex < currentQuestionList.length) {
-      render()
+  currentQuestionTextIndex += 1
+  if (currentQuestionTextIndex < currentQuestionList.length) {
+    render()
     } else {
-      messageEl.textContent = `You got ${score} out of ${currentQuestionList.length} correct!`
+    messageEl.textContent = `You got ${score} out of ${currentQuestionList.length} correct!`
     }
   }
 }
 
-// function checkForWinner(){
-//   // currentQuestionTextIndex += 1
-//     if (currentQuestionTextIndex === currentQuestionList.length) {
-//       winningScore === 20
-//       winner = true
-//   }
-// }
-
-// function updateMessage() {
-//   if (!winner) {
-//     messageEl.textContent = `You Lose! Try again!`
-//   } else {
-//     messageEl.textContent = `Congrats! You Win! You're a 90's Wiz!`
-//   }
-// }
 
 function render() {
-  // console.log(currentQuestionList)
   if (gameIsInPlay) {
-    resetButtonContainer.style.display = ''
-    categoryCardContainerEl.style.display = 'none'
-    questionCardContainerEl.style.display = ''
-    chooseCategoryContainerEl.style.display = 'none'
-    appendQuestion()
-      } else {
-    resetButtonContainer.style.display = 'none'
-    questionCardContainerEl.style.display = 'none'
-    categoryCardContainerEl.style.display = ''
-    chooseCategoryContainerEl.style.display = ''
-    }
+  resetButtonContainer.style.display = ''
+  categoryCardContainerEl.style.display = 'none'
+  questionCardContainerEl.style.display = ''
+  chooseCategoryContainerEl.style.display = 'none'
+  appendQuestion()
+  } else {
+  resetButtonContainer.style.display = 'none'
+  questionCardContainerEl.style.display = 'none'
+  categoryCardContainerEl.style.display = ''
+  chooseCategoryContainerEl.style.display = ''
+  }
 }
 
 
@@ -132,17 +115,16 @@ function appendQuestion(){
   let questionCard = document.createElement('div')
   questionCard.className = `card ${currentQuestionList[currentQuestionTextIndex].questionText}`
   questionCard.innerHTML = 
-    `<div>
-      <p>${currentQuestionList[currentQuestionTextIndex].questionText}</p>
-    </div>
-    `
-    
+  `<div>
+  <p>${currentQuestionList[currentQuestionTextIndex].questionText}</p>
+  </div>
+  `
   questionCardContainerEl.appendChild(questionCard)
   currentQuestionList[currentQuestionTextIndex].answers.forEach(answer => {
-    let answerBtn = document.createElement('button')
-    answerBtn.textContent = answer
-    answerBtn.addEventListener('click', selectAnswer)
-    questionCard.appendChild(answerBtn)
+  let answerBtn = document.createElement('button')
+  answerBtn.textContent = answer
+  answerBtn.addEventListener('click', selectAnswer)
+  questionCard.appendChild(answerBtn)
   })
 }
 
@@ -155,7 +137,5 @@ function init(){
 
 function handleReset (){
   gameIsInPlay = false
-  // checkForWinner()
-  // updateMessage()
   render()
 }
