@@ -8,10 +8,6 @@ import { moviesQuestions, toysQuestions, tvShowsQuestions, musicQuestions } from
 
 /*-------------------------------- Variables (state)-----------------------------*/
 
-// const tvShowsQuestions = []
-// const moviesQuestions = []
-// const toyQuestions = []
-// const musicQuestions = []
 let currentQuestionList = []
 let currentQuestionTextIndex = 0
 let gameIsInPlay
@@ -21,25 +17,23 @@ let score
 
 const categoryCardContainerEl = document.querySelector('#category-card-container')
 const questionCardContainerEl = document.querySelector('#question-card-container')
+const resetButtonContainer = document.querySelector('.reset-button-container')
+const messageContainer = document.querySelector('#message-container')
 const cardEl = document.querySelector('#card')
 const cardEl2= document.querySelector('#card2')
 const cardEl3 = document.querySelector('#card3')
 const cardEl4 = document.querySelector('#card4')
-const resetButtonContainer = document.querySelector('.reset-button-container')
 const resetBtn = document.getElementById('reset')
-// const messageEl = document.querySelector('#message')
+const messageEl = document.querySelector('#message')
 
 
 /*----------------------------- Event Listeners --------------------------------*/
-
 
 cardEl.addEventListener('click', createTvQuestion) 
 cardEl2.addEventListener('click', createMovieQuestion)
 cardEl3.addEventListener('click', createToyQuestion)
 cardEl4.addEventListener('click', createMusicQuestion)
 resetBtn.addEventListener('click', handleReset)
-
-  
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -77,16 +71,16 @@ function createMusicQuestion(){
 function selectAnswer(evt) {
   if (currentQuestionTextIndex < currentQuestionList.length) {
     if (evt.target.textContent === currentQuestionList[currentQuestionTextIndex].correctAnswer) {
-      console.log('correct answer')
+      messageEl.textContent = `Correct! You're a 90's wiz!`
       score += 1
     } else {
-      console.log('incorrect answer')
+      messageEl.textContent = `Incorrect!`
     }
     currentQuestionTextIndex += 1
     if (currentQuestionTextIndex < currentQuestionList.length) {
       render()
     } else {
-      console.log(`You got ${score} out of ${currentQuestionList.length} correct!`)
+      messageEl.textContent = `You got ${score} out of ${currentQuestionList.length} correct!`
     }
   }
 }
@@ -103,29 +97,14 @@ function render() {
     resetButtonContainer.style.display = 'none'
     questionCardContainerEl.style.display = 'none'
     categoryCardContainerEl.style.display = ''
-  }
-  // categoryCardContainerEl.innerHTML = ''
-  // tvShowsQuestions.forEach((question, idx) => {
-  //   appendQuestion(question, idx)
-  //   })
-  // moviesQuestions.forEach((question, idx) => {
-  //   appendQuestion(question, idx)
-  //   }) 
-  // toysQuestions.forEach((question, idx) => {
-  //   appendQuestion(question, idx)
-  //   }) 
-  // musicQuestions.forEach((question, idx) => {
-  //   appendQuestion(question, idx)
-  //   })        
-  }
+    }
+}
 
 
 function appendQuestion(){
   questionCardContainerEl.innerHTML = ''
   let questionCard = document.createElement('div')
-  // let answerCard = document.createElement('div')
   questionCard.className = `card ${currentQuestionList[currentQuestionTextIndex].questionText}`
-  // answerCard.className = `card ${answer.correctAnswerText}`
   questionCard.innerHTML = 
     `<div>
       <p>${currentQuestionList[currentQuestionTextIndex].questionText}</p>
@@ -139,12 +118,6 @@ function appendQuestion(){
     answerBtn.addEventListener('click', selectAnswer)
     questionCard.appendChild(answerBtn)
   })
-  // answerCard.innerHTML = 
-  //   `<div>
-  //   <p>${answer.correctAnswerText1}</p>
-  //   </div>
-  //   `
-  // categoryCardContainerEl.appendChild(answerCard)  
 }
 
 function init(){
