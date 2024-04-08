@@ -5,7 +5,8 @@ import { getRandomToyQuestion } from "../data/questions.js"
 import { getRandomMusicQuestion } from "../data/questions.js"
 import { moviesQuestions, toysQuestions, tvShowsQuestions, musicQuestions } from "../data/questions.js"
 
-
+const categorySays = new Audio("audio/retro-video-game-coin-pickup-38299.mp3")
+const answerSays = new Audio("audio/089684_retro-you-lose-sfx-85557.mp3")
 /*-------------------------------- Variables (state)-----------------------------*/
 
 let currentQuestionList = []
@@ -31,7 +32,7 @@ const messageEl = document.querySelector('#message')
 
 /*----------------------------- Event Listeners --------------------------------*/
 
-cardEl.addEventListener('click', createTvQuestion) 
+cardEl.addEventListener('click', createTvQuestion)
 cardEl2.addEventListener('click', createMovieQuestion)
 cardEl3.addEventListener('click', createToyQuestion)
 cardEl4.addEventListener('click', createMusicQuestion)
@@ -71,11 +72,18 @@ function createMusicQuestion(){
 }
 
 function selectAnswer(evt) {
+  
   if (currentQuestionTextIndex < currentQuestionList.length) {
     if (evt.target.textContent === currentQuestionList[currentQuestionTextIndex].correctAnswer) {
+      categorySays.volume = .05
+      categorySays.play()
       messageEl.textContent = `Correct!`
       score += 1 
+      console.log(score)
     } else {
+      (evt.target.textContent === currentQuestionList[currentQuestionTextIndex].answers)
+      answerSays.volume = .05
+      answerSays.play()
       messageEl.textContent = `Incorrect!`
     } 
     currentQuestionTextIndex += 1
@@ -87,14 +95,21 @@ function selectAnswer(evt) {
   }
 }
 
-function checkForWinner(){
-  currentQuestionTextIndex += 1
-    if (currentQuestionTextIndex === currentQuestionList.length) {
-      score === 20
-      winner = true
-      messageEl.textContent = `Congrats! You Win! You're A 90's Wiz!`
-    }
-}
+// function checkForWinner(){
+//   // currentQuestionTextIndex += 1
+//     if (currentQuestionTextIndex === currentQuestionList.length) {
+//       winningScore === 20
+//       winner = true
+//   }
+// }
+
+// function updateMessage() {
+//   if (!winner) {
+//     messageEl.textContent = `You Lose! Try again!`
+//   } else {
+//     messageEl.textContent = `Congrats! You Win! You're a 90's Wiz!`
+//   }
+// }
 
 function render() {
   // console.log(currentQuestionList)
@@ -135,10 +150,13 @@ function appendQuestion(){
 function init(){
   gameIsInPlay = false
   score = 0
+  winner = false
   render()
 }
 
 function handleReset (){
   gameIsInPlay = false
+  // checkForWinner()
+  // updateMessage()
   render()
 }
