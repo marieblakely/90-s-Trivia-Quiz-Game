@@ -7,7 +7,7 @@
 - Your **`README.md`** file must be grammatically correct and free of spelling errors. -->
 
 ![game screenshot](assets/Images/gamescreenshot.png)
-
+![updated screenshot](assets/Images/updatedgamescreenshot.png)
 # `90's Trivia Quiz`
 
 
@@ -31,7 +31,7 @@
 | `JavaScript`  | [Coolors](https://coolors.co/)   | animations and font added to header |
 | `HTML `       | [Hero Patterns](https://heropatterns.com/)| category cards have a 3D look    |
 | `CSS`         | [Superfffmk.life](https://superfffmk.life/product_details/75046559.html)|    |
-|               | [Orbitron Google Font](https://fonts.google.com/specimen/Orbitron?query=orbitron)|    |
+|               | [Orbitron Google Font](https://superfffmk.life/product_details/75046559.html)|    |
 
 
 

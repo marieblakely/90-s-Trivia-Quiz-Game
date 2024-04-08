@@ -5,7 +5,7 @@ import { getRandomToyQuestion } from "../data/questions.js"
 import { getRandomMusicQuestion } from "../data/questions.js"
 import { moviesQuestions, toysQuestions, tvShowsQuestions, musicQuestions } from "../data/questions.js"
 
-const categorySays = new Audio("audio/retro-video-game-coin-pickup-38299.mp3")
+const correctAnswerSays = new Audio("audio/retro-video-game-coin-pickup-38299.mp3")
 const answerSays = new Audio("audio/089684_retro-you-lose-sfx-85557.mp3")
 /*-------------------------------- Variables (state)-----------------------------*/
 
@@ -75,12 +75,11 @@ function selectAnswer(evt) {
   
   if (currentQuestionTextIndex < currentQuestionList.length) {
     if (evt.target.textContent === currentQuestionList[currentQuestionTextIndex].correctAnswer) {
-      categorySays.volume = .05
-      categorySays.play()
+      correctAnswerSays.volume = .05
+      correctAnswerSays.play()
       messageEl.textContent = `Correct!`
       score += 1 
-      console.log(score)
-    } else {
+      } else {
       (evt.target.textContent === currentQuestionList[currentQuestionTextIndex].answers)
       answerSays.volume = .05
       answerSays.play()
