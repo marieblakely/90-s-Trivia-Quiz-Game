@@ -31,7 +31,8 @@
 | `JavaScript`  | [Coolors](https://coolors.co/)   | `Win and Loss functionality` |
 | `HTML `       | [Hero Patterns](https://heropatterns.com/)| `Question cards and reset button aligned center during game`   | 
 | `CSS`         | [Superfffmk.life](https://superfffmk.life/product_details/75046559.html)| `Animations added to header`   |
-|               | [Orbitron Google Font](https://superfffmk.life/product_details/75046559.html)| `Sounds added when category card is clicked and when game has been won or lost`   |
-|               | [Pixabay](https://pixabay.com/sound-effects/search/retro%20games/)   | |
+| `Netlify` | [Orbitron Google Font](https://superfffmk.life/product_details/75046559.html)| `Sounds added when category card is clicked and when game has been won or lost`   |
+|      `git`         | [Pixabay](https://pixabay.com/sound-effects/search/retro%20games/)   | |
+|      `gitHub`         | [Pixabay](https://pixabay.com/sound-effects/search/retro%20games/)   | |
 
 
