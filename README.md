@@ -28,10 +28,10 @@
 
 | `Technology:`  | `Attributes:`   | `Icebox Items:`  |
 | ------------- |:-------------:| -----:|
-| `JavaScript`  | [Coolors](https://coolors.co/)   | animations and font added to header |
-| `HTML `       | [Hero Patterns](https://heropatterns.com/)| category cards have a 3D look    |
-| `CSS`         | [Superfffmk.life](https://superfffmk.life/product_details/75046559.html)|    |
-|               | [Orbitron Google Font](https://superfffmk.life/product_details/75046559.html)|    |
+| `JavaScript`  | [Coolors](https://coolors.co/)   | `Scoring Functionality` |
+| `HTML `       | [Hero Patterns](https://heropatterns.com/)| `Question cards and reset button aligned center during game`   | 
+| `CSS`         | [Superfffmk.life](https://superfffmk.life/product_details/75046559.html)| `Animations added to header`   |
+|               | [Orbitron Google Font](https://superfffmk.life/product_details/75046559.html)| `Sounds added when category card is clicked and when game has been won or lost`   |
 |               | [Pixabay](https://pixabay.com/sound-effects/search/retro%20games/)   | |
 
 
