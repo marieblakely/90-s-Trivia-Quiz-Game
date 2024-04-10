@@ -1,8 +1,4 @@
 /*-------------------------------- Constants --------------------------------*/
-import { getRandomTvShowQuestion } from "../data/questions.js"
-import { getRandomMovieQuestion } from "../data/questions.js"
-import { getRandomToyQuestion } from "../data/questions.js"
-import { getRandomMusicQuestion } from "../data/questions.js"
 import { moviesQuestions, toysQuestions, tvShowsQuestions, musicQuestions } from "../data/questions.js"
 
 const correctAnswerSays = new Audio("audio/retro-video-game-coin-pickup-38299.mp3")
