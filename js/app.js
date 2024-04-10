@@ -25,6 +25,7 @@ const resetBtn = document.getElementById('reset')
 const messageEl = document.querySelector('#message')
 
 
+
 /*----------------------------- Event Listeners --------------------------------*/
 
 cardEl.addEventListener('click', createTvQuestion)
@@ -32,6 +33,7 @@ cardEl2.addEventListener('click', createMovieQuestion)
 cardEl3.addEventListener('click', createToyQuestion)
 cardEl4.addEventListener('click', createMusicQuestion)
 resetBtn.addEventListener('click', handleReset)
+
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -133,5 +135,7 @@ function init(){
 
 function handleReset (){
   gameIsInPlay = false
+  score = 0
   render()
 }
+
