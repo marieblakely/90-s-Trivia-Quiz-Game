@@ -15,7 +15,7 @@ const moviesQuestions = [
 ]
 
 const toysQuestions = [
-  {questionText: 'What small, colorful handheld video game system was available in an array of colors with a catalog of over 1,000 games?', correctAnswer: 'Game Boy Color', answers: ['Super Nintendo', 'Game Boy Color', 'Sega Genasis', 'Atari']},
+  {questionText: 'What small, colorful handheld video game system was available in an array of colors with a catalog of over 1,000 games?', correctAnswer: 'Game Boy Color', answers: ['Super Nintendo', 'Game Boy Color', 'Sega Genesis', 'Atari']},
   {questionText: 'Which of these handheld games calls out commands randomly that increases in speed as the game progresses?', correctAnswer: 'Bop It', answers: ['Simon Says', 'Wheel of Fortune', 'Game Gear', 'Bop It']},
   {questionText: 'What keychain-sized virtual simulation game allows you to feed, and take care of your own pet?', correctAnswer: 'Tamagotchi', answers: ['Tamagotchi', 'Robot Dog', 'Hatchimal', 'Littlest Pet Shop']},
   {questionText: 'What toy gun requires manually pumping air to shoot water with power and range?', correctAnswer: 'Super Soaker', answers: ['Summer Soaker', 'Super Soaker', 'Tyco Motorized Water Gun', 'Nerf Gun']},
