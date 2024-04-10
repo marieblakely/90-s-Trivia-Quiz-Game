@@ -17,11 +17,13 @@ const categoryCardContainerEl = document.querySelector('#category-card-container
 const questionCardContainerEl = document.querySelector('#question-card-container')
 const chooseCategoryContainerEl = document.querySelector('#choose-category-container')
 const resetButtonContainer = document.querySelector('.reset-button-container')
+// const newGameBtnEl = document.querySelector('#start-new-game-container')
 const cardEl = document.querySelector('#card')
 const cardEl2= document.querySelector('#card2')
 const cardEl3 = document.querySelector('#card3')
 const cardEl4 = document.querySelector('#card4')
 const resetBtn = document.getElementById('reset')
+// const newGameBtn = document.getElementById('#new-game')
 const messageEl = document.querySelector('#message')
 
 
@@ -33,6 +35,7 @@ cardEl2.addEventListener('click', createMovieQuestion)
 cardEl3.addEventListener('click', createToyQuestion)
 cardEl4.addEventListener('click', createMusicQuestion)
 resetBtn.addEventListener('click', handleReset)
+// newGameBtn.addEventListener('click', newGame)
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -139,3 +142,9 @@ function handleReset (){
   render()
 }
 
+// function newGame (){
+//   gameIsInPlay =  false
+//   score = 0
+//   winner = false
+//   render()
+// }
