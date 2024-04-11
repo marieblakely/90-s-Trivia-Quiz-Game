@@ -8,8 +8,9 @@ const answerSays = new Audio("audio/089684_retro-you-lose-sfx-85557.mp3")
 let currentQuestionList = []
 let currentQuestionTextIndex = 0
 let gameIsInPlay
-let score
 let winner
+let totalQuestions = 20
+let totalScore = 0
 
 /*------------------------ Cached Element References ---------------------------*/
 
@@ -17,13 +18,13 @@ const categoryCardContainerEl = document.querySelector('#category-card-container
 const questionCardContainerEl = document.querySelector('#question-card-container')
 const chooseCategoryContainerEl = document.querySelector('#choose-category-container')
 const resetButtonContainer = document.querySelector('.reset-button-container')
-// const newGameBtnEl = document.querySelector('#start-new-game-container')
+const newGameButtonContainer = document.querySelector('#start-new-game-container')
 const cardEl = document.querySelector('#card')
 const cardEl2= document.querySelector('#card2')
 const cardEl3 = document.querySelector('#card3')
 const cardEl4 = document.querySelector('#card4')
 const resetBtn = document.getElementById('reset')
-// const newGameBtn = document.getElementById('#new-game')
+const newGameBtn = document.getElementById('.new-game')
 const messageEl = document.querySelector('#message')
 
 
@@ -35,7 +36,7 @@ cardEl2.addEventListener('click', createMovieQuestion)
 cardEl3.addEventListener('click', createToyQuestion)
 cardEl4.addEventListener('click', createMusicQuestion)
 resetBtn.addEventListener('click', handleReset)
-// newGameBtn.addEventListener('click', newGame)
+newGameBtn.addEventListener('click', newGame)
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -72,24 +73,27 @@ function createMusicQuestion(){
 }
 
 function selectAnswer(evt) {
-  
   if (currentQuestionTextIndex < currentQuestionList.length) {
-  if (evt.target.textContent === currentQuestionList[currentQuestionTextIndex].correctAnswer) {
-    correctAnswerSays.volume = .05
-    correctAnswerSays.play()
-    messageEl.textContent = `Correct!`
-    score += 1 
-  } else {
-    (evt.target.textContent === currentQuestionList[currentQuestionTextIndex].answers)
-    answerSays.volume = .05
-    answerSays.play()
-    messageEl.textContent = `Incorrect!`
-    } 
-  currentQuestionTextIndex += 1
-  if (currentQuestionTextIndex < currentQuestionList.length) {
-    render()
+    if (evt.target.textContent === currentQuestionList[currentQuestionTextIndex].correctAnswer) {
+      correctAnswerSays.volume = .05
+      correctAnswerSays.play()
+      messageEl.textContent = `Correct!`
+      totalScore += 1
     } else {
-    messageEl.textContent = `You got ${score} out of ${currentQuestionList.length} correct!`
+      answerSays.volume = .05
+      answerSays.play()
+      messageEl.textContent = `Incorrect!`
+    }
+    currentQuestionTextIndex += 1
+    if (currentQuestionTextIndex < currentQuestionList.length) {
+      render()
+    } else {
+      messageEl.textContent = `You got ${totalScore} out of ${totalQuestions} correct!`
+      if (totalScore === totalQuestions) {
+        messageEl.textContent += ` Congratulations! You win the game!`
+      } else {
+        messageEl.textContent += `You Lose! Try Again!`
+      }
     }
   }
 }
@@ -131,20 +135,24 @@ function appendQuestion(){
 
 function init(){
   gameIsInPlay = false
-  score = 0
   winner = false
   render()
 }
 
-function handleReset (){
+function handleReset() {
   gameIsInPlay = false
-  score = 0
+  currentQuestionList = []
+  currentQuestionTextIndex = 0
+  winner = false
+  messageEl.textContent = `You have ${totalScore} out of ${totalQuestions} correct!. Go to next Category`
   render()
 }
 
-// function newGame (){
-//   gameIsInPlay =  false
-//   score = 0
-//   winner = false
-//   render()
-// }
+function newGame (){
+  gameIsInPlay = false
+  totalScore = 0
+  currentQuestionList = []
+  currentQuestionTextIndex = 0
+  winner = false
+  messageEl.textContent = ''
+}
