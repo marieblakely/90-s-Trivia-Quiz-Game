@@ -26,6 +26,7 @@ const cardEl4 = document.querySelector('#card4')
 const resetBtn = document.getElementById('reset')
 const newGameBtn = document.querySelector('.new-game')
 const messageEl = document.querySelector('#message')
+let countdownEl = document.getElementById('countdown')
 
 /*----------------------------- Event Listeners --------------------------------*/
 
@@ -45,6 +46,7 @@ function createTvQuestion(){
   currentQuestionTextIndex = 0
   currentQuestionList = [...tvShowsQuestions]
   gameIsInPlay = true
+  timer()
   render()
 }
 
@@ -52,6 +54,7 @@ function createMovieQuestion(){
   currentQuestionTextIndex = 0
   currentQuestionList = [...moviesQuestions]
   gameIsInPlay = true
+  timer()
   render()
 }
 
@@ -59,6 +62,7 @@ function createToyQuestion(){
   currentQuestionTextIndex = 0
   currentQuestionList = [...toysQuestions]
   gameIsInPlay = true
+  timer()
   render()
 }
 
@@ -66,15 +70,16 @@ function createMusicQuestion(){
   currentQuestionTextIndex = 0
   currentQuestionList = [...musicQuestions]
   gameIsInPlay = true
+  timer()
   render()
 }
 
 function timer (){ 
   let timer = setInterval(function() {
-    countdownEl.textContent = timeLeft + ' seconds remaining.'
+    countdownEl.textContent = timeLeft + ' seconds remaining!'
     timeLeft -= 1
     if (timeLeft < 0) {
-        countdownEl.textContent = 'Finished!'
+        countdownEl.textContent = 'Times Up!'
     }
   }, 1000)
   }
@@ -143,7 +148,6 @@ function appendQuestion(){
 
 function init(){
   gameIsInPlay = false
-  winner = false
   render()
 }
 
@@ -163,7 +167,7 @@ function newGame (){
   currentQuestionTextIndex = 0
   winner = false
   messageEl.textContent = ''
-}
+  }
 
 
 
