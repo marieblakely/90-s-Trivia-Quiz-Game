@@ -11,6 +11,7 @@ let gameIsInPlay
 let winner
 let totalQuestions = 20
 let totalScore = 0
+let timeLeft = 60
 
 /*------------------------ Cached Element References ---------------------------*/
 
@@ -18,16 +19,13 @@ const categoryCardContainerEl = document.querySelector('#category-card-container
 const questionCardContainerEl = document.querySelector('#question-card-container')
 const chooseCategoryContainerEl = document.querySelector('#choose-category-container')
 const resetButtonContainer = document.querySelector('.reset-button-container')
-const newGameButtonContainer = document.querySelector('#start-new-game-container')
 const cardEl = document.querySelector('#card')
 const cardEl2= document.querySelector('#card2')
 const cardEl3 = document.querySelector('#card3')
 const cardEl4 = document.querySelector('#card4')
 const resetBtn = document.getElementById('reset')
-const newGameBtn = document.getElementById('.new-game')
+const newGameBtn = document.querySelector('.new-game')
 const messageEl = document.querySelector('#message')
-
-
 
 /*----------------------------- Event Listeners --------------------------------*/
 
@@ -37,7 +35,6 @@ cardEl3.addEventListener('click', createToyQuestion)
 cardEl4.addEventListener('click', createMusicQuestion)
 resetBtn.addEventListener('click', handleReset)
 newGameBtn.addEventListener('click', newGame)
-
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -72,6 +69,16 @@ function createMusicQuestion(){
   render()
 }
 
+function timer (){ 
+  let timer = setInterval(function() {
+    countdownEl.textContent = timeLeft + ' seconds remaining.'
+    timeLeft -= 1
+    if (timeLeft < 0) {
+        countdownEl.textContent = 'Finished!'
+    }
+  }, 1000)
+  }
+
 function selectAnswer(evt) {
   if (currentQuestionTextIndex < currentQuestionList.length) {
     if (evt.target.textContent === currentQuestionList[currentQuestionTextIndex].correctAnswer) {
@@ -91,8 +98,8 @@ function selectAnswer(evt) {
       messageEl.textContent = `You got ${totalScore} out of ${totalQuestions} correct!`
       if (totalScore === totalQuestions) {
         messageEl.textContent += ` Congratulations! You win the game!`
-      } else {
-        messageEl.textContent += `You Lose! Try Again!`
+      } else if(totalScore === totalQuestions && totalScore < 20) {
+        messageEl.textContent = `you lose! You have ${totalScore} out of ${totalQuestions}!. Try again next time`
       }
     }
   }
@@ -101,18 +108,19 @@ function selectAnswer(evt) {
 
 function render() {
   if (gameIsInPlay) {
-  resetButtonContainer.style.display = ''
-  categoryCardContainerEl.style.display = 'none'
-  questionCardContainerEl.style.display = ''
-  chooseCategoryContainerEl.style.display = 'none'
-  appendQuestion()
+    resetButtonContainer.style.display = ''
+    categoryCardContainerEl.style.display = 'none'
+    questionCardContainerEl.style.display = ''
+    chooseCategoryContainerEl.style.display = 'none'
+    appendQuestion()
   } else {
-  resetButtonContainer.style.display = 'none'
-  questionCardContainerEl.style.display = 'none'
-  categoryCardContainerEl.style.display = ''
-  chooseCategoryContainerEl.style.display = ''
+    resetButtonContainer.style.display = 'none'
+    questionCardContainerEl.style.display = 'none'
+    categoryCardContainerEl.style.display = ''
+    chooseCategoryContainerEl.style.display = ''
   }
 }
+
 
 
 function appendQuestion(){
@@ -156,3 +164,15 @@ function newGame (){
   winner = false
   messageEl.textContent = ''
 }
+
+
+
+
+
+
+
+
+
+
+
+
